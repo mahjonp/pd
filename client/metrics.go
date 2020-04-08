@@ -107,14 +107,3 @@ var (
 	configCmdFailDurationUpdate = configCmdFailedDuration.WithLabelValues("update")
 	configCmdFailDurationDelete = configCmdFailedDuration.WithLabelValues("delete")
 )
-
-func init() {
-	prometheus.MustRegister(cmdDuration)
-	prometheus.MustRegister(cmdFailedDuration)
-	prometheus.MustRegister(requestDuration)
-	prometheus.MustRegister(tsoBatchSize)
-
-	// config
-	prometheus.MustRegister(configCmdDuration)
-	prometheus.MustRegister(configCmdFailedDuration)
-}
